@@ -6,7 +6,7 @@
 </h1>
 
 <p align="center">
-  <img alt="" src="https://img.shields.io/github/repo-size/JhonatanBergmann/Go4All" />
+  <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/JhonatanBergmann/Go4All" />
 </p>
 
 <p align="center">Go4All</p>
