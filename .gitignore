@@ -1,3 +1,4 @@
+forReadme/*
 node_modules/**/*
 .expo/*
 npm-debug.*
