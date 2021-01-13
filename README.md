@@ -26,7 +26,7 @@ Aplicação mobile desenvolvida para critérios de avaliação.
 </p>
 
 ## 🌐 Tecnologias Usadas
-Foram usadas essa tecnologias:
+Foram usadas essas tecnologias:
 
 - [React Native](https://reactnative.dev/)
 - [Yarn](https://yarnpkg.com/)
