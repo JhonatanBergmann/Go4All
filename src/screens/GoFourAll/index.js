@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { useState } from "react"
 import {
   Container,
   TitleContainer,
@@ -11,7 +11,7 @@ import ModalInstructions from '../../components/ModalInstructions/index'
 import VideoGoFourAll from '../../components/VideoGoFourAll/index'
 import { Ionicons } from '@expo/vector-icons'
 
-let randomHex = () => {
+const randomHex = () => {
   let letters = '0123456789ABCDEF'
   let color = '#'
   for (let i = 0; i < 6; i++) {
@@ -20,37 +20,28 @@ let randomHex = () => {
   return color
 }
 
-export default class GoFourAll extends Component {
-  constructor(props) {
-    super(props)
+export default function GoFourAll() {
 
-    this.onClick = this.onClick.bind(this)
+  const [state, setState] = useState({ backgroundColor: '#0000ff' })
 
-    this.state = {
-      backgroundColor: randomHex(),
-    }
+  function onClick() {
+    console.log('Gerando cor aleátoria :)')
+    setState({ backgroundColor: randomHex() })
   }
 
-  onClick() {
-    console.log('Clicou :)')
-    this.setState({ backgroundColor: randomHex() })
-  }
-
-  render() {
-    return (
-      <Container style={{ backgroundColor: randomHex() }}>
-        <BackgroundLinearGradient />
-        <TitleContainer>
-          <Title>Go 4all</Title>
-          <VideoGoFourAll />
-        </TitleContainer>
-        <ButtonContainer>
-          <Button onPress={this.onClick}>
-            <Ionicons name='color-palette' size={30} color='#FFF' />
-          </Button>
-          <ModalInstructions />
-        </ButtonContainer>
-      </Container>
-    )
-  }
+  return (
+    <Container style={state}>
+      <BackgroundLinearGradient />
+      <TitleContainer>
+        <Title>Go 4all</Title>
+        <VideoGoFourAll />
+      </TitleContainer>
+      <ButtonContainer>
+        <Button onPress={onClick}>
+          <Ionicons name='color-palette' size={30} color='#FFF' />
+        </Button>
+        <ModalInstructions />
+      </ButtonContainer>
+    </Container>
+  )
 }
